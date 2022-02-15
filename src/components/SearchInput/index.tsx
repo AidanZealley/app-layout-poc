@@ -10,7 +10,7 @@ export const SearchInput = ({ placeholder }: IProps) => {
   return (
     <div className={styles.search}>
       <input className={styles.input} placeholder={placeholder}/>
-      <Button>
+      <Button variant="borderless">
         <Search size="1rem"/>
       </Button>
     </div>

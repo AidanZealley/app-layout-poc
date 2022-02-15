@@ -1,17 +1,16 @@
+import { Filter } from "../../../components/Filter"
 import { useLayoutValuesContext } from "../../../components/Layout/LayoutProvider"
+import { SearchInput } from "../../../components/SearchInput"
 import { Sidebar } from "../../../components/Sidebar"
-import { ProjectsFilters } from "../ProjectsFilters"
 
 export const ProjectsSidebar = () => {
   const { showRight } = useLayoutValuesContext()
 
   return (
     <Sidebar toggle={showRight}>
-      <Sidebar.Header totalFilters={1} activeFilters={0}/>
-
-      <Sidebar.Group>
-        <ProjectsFilters/>
-      </Sidebar.Group>
+      <Filter name="Search by name">
+        <SearchInput placeholder="Enter client..."/>
+      </Filter>
     </Sidebar>
   )
 }

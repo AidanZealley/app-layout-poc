@@ -12,9 +12,7 @@ import '../../styles/splitter.css';
 export const Layout = () => {
   return (
     <div className={styles.layout}>
-      <div className={styles.side}>
-        <ConsultantsSidebar/>
-      </div>
+      <ConsultantsSidebar/>
 
       <div className={styles.content}>
         <SplitterLayout percentage primaryMinSize={10} secondaryMinSize={10}>
@@ -29,9 +27,7 @@ export const Layout = () => {
         </SplitterLayout>
       </div>
 
-      <div className={styles.side}>
-        <ProjectsSidebar/>
-      </div>
+      <ProjectsSidebar/>
     </div>
   )
 }

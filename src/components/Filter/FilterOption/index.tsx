@@ -1,15 +1,16 @@
+import { X } from 'react-feather'
+import { Button } from '../../Button'
 import styles from './styles.module.css'
 
 interface IProps {
   name: string
-  checked: boolean
 }
 
-export const FilterOption = ({ name, checked }: IProps) => {
+export const FilterOption = ({ name }: IProps) => {
   return (
     <div className={styles.option}>
-      <input name={name} type="checkbox" checked={checked}/>
       <label className={styles.label} label-for={name}>{name}</label>
+      <Button size="sm"><X size="0.8rem"/></Button>
     </div>
   )
 }

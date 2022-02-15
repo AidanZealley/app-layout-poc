@@ -1,13 +1,26 @@
+import { HTMLAttributes } from 'react'
 import styles from './styles.module.css'
 
-interface IProps {
+type Sizes = 'sm' | 'md'
+type Variants = 'borderless' | 'regular'
+
+interface IProps extends HTMLAttributes<HTMLButtonElement>{
+  size?: Sizes
+  variant?: Variants
   children: React.ReactNode
   [prop: string]: any
 }
 
-export const Button = ({ children, ...props }: IProps) => {
+export const Button = ({ size = 'md', variant = 'regular', children, ...props }: IProps) => {
   return (
-    <button className={styles.button} {...props}>
+    <button
+      className={`
+        ${styles.button}
+        ${size ? ` ${styles[`size-${size}`]}` : ''}
+        ${variant ? ` ${styles[`variant-${variant}`]}` : ''}
+      `}
+      {...props}
+    >
       {children}
     </button>
   )
