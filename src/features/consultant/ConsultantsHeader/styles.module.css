@@ -1,0 +1,14 @@
+.quickInfo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.info {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.quantity {
+  font-size: 0.8rem;
+}

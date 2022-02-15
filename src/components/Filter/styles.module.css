@@ -1,0 +1,26 @@
+.filter {
+  display: grid;
+  gap: 1rem;
+  background: white;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+}
+
+.name {
+  margin: 0;
+}
+
+.options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.option {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.option label {
+  font-size: 0.8rem;
+}

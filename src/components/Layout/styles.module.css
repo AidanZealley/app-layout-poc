@@ -1,0 +1,18 @@
+.layout {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  box-shadow: 0 0 0.1rem 0.05rem rgba(0,0,0,0.05);
+}
+
+.side {
+  display: grid;
+}

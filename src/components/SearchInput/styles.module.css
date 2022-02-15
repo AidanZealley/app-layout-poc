@@ -1,0 +1,19 @@
+.search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  background: white;
+  padding: 0.25rem;
+}
+
+.input {
+  border: 0;
+  background: 0;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.5rem;
+  width: inherit;
+}
