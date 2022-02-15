@@ -1,13 +1,13 @@
-import { useState } from "react"
-import SplitterLayout from "react-splitter-layout"
-import { ConsultantsGrid } from "../../features/consultant/ConsultantsGrid"
-import { ConsultantsHeader } from "../../features/consultant/ConsultantsHeader"
-import { ProjectsGrid } from "../../features/project/ProjectsGrid"
-import { ProjectsHeader } from "../../features/project/ProjectsHeader"
-import { useLayoutActionsContext, useLayoutValuesContext } from "../Layout/LayoutProvider"
-import { Pane } from "../Pane"
+import { useState } from 'react'
+import SplitterLayout from 'react-splitter-layout'
+import { useLayoutActionsContext, useLayoutValuesContext } from '../Layout/LayoutProvider'
+import './splitter.css';
 
-export const Splitter = () => {
+interface IProps {
+  children: React.ReactNode
+}
+
+export const Splitter = ({ children }: IProps) => {
   const { split } = useLayoutValuesContext()
   const { updateSplit } = useLayoutActionsContext()
   const [secondaryWidth, setSecondaryWidth] = useState(50)
@@ -19,7 +19,7 @@ export const Splitter = () => {
   const dragEndHandler = () => {
     updateSplit(secondaryWidth)
   }
-  
+
   return (
     <SplitterLayout
       percentage
@@ -29,14 +29,7 @@ export const Splitter = () => {
       onDragEnd={dragEndHandler}
       onSecondaryPaneSizeChange={handleSecondaryChange}
     >
-      <Pane>
-        <ConsultantsHeader/>
-        <ConsultantsGrid/>
-      </Pane>
-      <Pane>
-        <ProjectsHeader/>
-        <ProjectsGrid/>
-      </Pane>
+      {children}
     </SplitterLayout>
   )
 }
