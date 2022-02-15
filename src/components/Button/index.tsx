@@ -17,10 +17,10 @@ export const Button = ({ size = 'md', variant = 'regular', color = 'regular', ch
   return (
     <button
       className={`
-        ${styles.button}
-        ${size ? ` ${styles[`size-${size}`]}` : ''}
-        ${variant ? ` ${styles[`variant-${variant}`]}` : ''}
-        ${color ? ` ${styles[`color-${color}`]}` : ''}
+        ${styles.button} 
+        ${styles[`size-${size}`]} 
+        ${styles[`variant-${variant}`]} 
+        ${styles[`color-${color}`]}
       `}
       {...props}
     >

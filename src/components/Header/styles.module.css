@@ -37,6 +37,12 @@
   right: 1rem;
 }
 
+.badgeWrap {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+}
+
 .reverse {
   grid-template-areas: "details title menuBtn";
 }
@@ -49,10 +55,4 @@
 .reverse .details {
   left: 1rem;
   right: auto;
-}
-
-.badgeWrap {
-  position: absolute;
-  top: -0.25rem;
-  right: -0.25rem;
 }
