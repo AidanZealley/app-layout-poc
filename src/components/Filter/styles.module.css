@@ -7,6 +7,10 @@
   border: 1px solid #ddd;
 }
 
+.active {
+  box-shadow: 0 0 0.05rem 0.1rem rgba(0,0,255,0.25);
+}
+
 .name {
   margin: 0;
 }
@@ -14,13 +18,4 @@
 .options {
   display: grid;
   gap: 0.5rem;
-}
-
-.option {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.option label {
-  font-size: 0.8rem;
 }

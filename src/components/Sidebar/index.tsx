@@ -1,4 +1,6 @@
 import { animated, useSpring } from 'react-spring'
+import { SidebarGroup } from './SidebarGroup'
+import { SidebarHeader } from './SidebarHeader'
 import styles from './styles.module.css'
 
 interface IProps {
@@ -18,10 +20,11 @@ export const Sidebar = ({ toggle, children }: IProps) => {
   return (
     <animated.div className={styles.sidebar} style={outerStyles}>
       <animated.div className={styles.inner} style={innertyles}>
-        <div className={styles.wrap}>
-          {children}
-        </div>
+        {children}
       </animated.div>
     </animated.div>
   )
 }
+
+Sidebar.Header = SidebarHeader
+Sidebar.Group = SidebarGroup

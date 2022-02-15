@@ -1,0 +1,9 @@
+.option {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.option label {
+  font-size: 0.8rem;
+}

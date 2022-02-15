@@ -50,3 +50,9 @@
   left: 1rem;
   right: auto;
 }
+
+.badgeWrap {
+  position: absolute;
+  top: -0.25rem;
+  right: -0.25rem;
+}

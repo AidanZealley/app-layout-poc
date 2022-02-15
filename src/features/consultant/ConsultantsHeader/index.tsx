@@ -7,7 +7,7 @@ export const ConsultantsHeader = () => {
   const { toggleLeft } = useLayoutActionsContext()
 
   return (
-    <Header title="Consultants" menuHandler={toggleLeft}>
+    <Header title="Consultants" menuHandler={toggleLeft} activeFilters={3}>
       <div className={styles.quickInfo}>
         <div className={styles.info}>
           <User size="1rem"/>

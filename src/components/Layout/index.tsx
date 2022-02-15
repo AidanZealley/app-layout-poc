@@ -1,25 +1,19 @@
 import SplitterLayout from 'react-splitter-layout'
 import { ConsultantsHeader } from '../../features/consultant/ConsultantsHeader'
 import { ProjectsHeader } from '../../features/project/ProjectsHeader'
-import { Sidebar } from '../Sidebar'
-import { useLayoutValuesContext } from './LayoutProvider'
-import styles from './styles.module.css'
-import '../../styles/splitter.css';
-import { ConsultantsFilters } from '../../features/consultant/ConsultantsFIlters'
-import { ProjectsFilters } from '../../features/project/ProjectsFIlters'
 import { ProjectsGrid } from '../../features/project/ProjectsGrid'
 import { Pane } from '../Pane'
 import { ConsultantsGrid } from '../../features/consultant/ConsultantsGrid'
+import { ConsultantsSidebar } from '../../features/consultant/ConsultantsSidebar'
+import { ProjectsSidebar } from '../../features/project/ProjectsSidebar'
+import styles from './styles.module.css'
+import '../../styles/splitter.css';
 
 export const Layout = () => {
-  const { showLeft, showRight } = useLayoutValuesContext()
-
   return (
     <div className={styles.layout}>
       <div className={styles.side}>
-        <Sidebar toggle={showLeft}>
-          <ConsultantsFilters/>
-        </Sidebar>
+        <ConsultantsSidebar/>
       </div>
 
       <div className={styles.content}>
@@ -36,9 +30,7 @@ export const Layout = () => {
       </div>
 
       <div className={styles.side}>
-        <Sidebar toggle={showRight}>
-          <ProjectsFilters/>
-        </Sidebar>
+        <ProjectsSidebar/>
       </div>
     </div>
   )
