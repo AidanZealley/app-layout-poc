@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { TableRow } from 'react-data-table-component'
 import { Grid } from '../../../components/Grid'
+import { Loading } from '../../../components/Loading'
 
 const columns = [
   {
@@ -15,12 +16,16 @@ const columns = [
 
 export const ProjectsGrid = () => {
   const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
+
       const response = await fetch('https://random-data-api.com/api/company/random_company?size=50')
       const data = await response.json()
 
+      setLoading(false)
       setProjects(data.map((company: any) => ({
         id: company.id,
         client: company.business_name,
@@ -32,9 +37,13 @@ export const ProjectsGrid = () => {
   }, [])
   
   return (
-    <Grid
-      columns={columns}
-      data={projects}
-    />
+    loading ? (
+      <Loading/>
+    ) : (
+      <Grid
+        columns={columns}
+        data={projects}
+      />
+    )
   )
 }

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { TableRow } from 'react-data-table-component';
 import { Grid } from '../../../components/Grid';
+import { Loading } from '../../../components/Loading';
 
 const columns = [
     {
@@ -28,12 +29,16 @@ const data = [
 
 export const ConsultantsGrid = () => {
   const [consultants, setConsultants] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true)
+
       const response = await fetch('https://randomuser.me/api/?results=50')
       const data = await response.json()
 
+      setLoading(false)
       setConsultants(data.results.map((user: any, index: number) => ({
         id: index,
         name: `${user.name.first} ${user.name.last}`,
@@ -45,9 +50,13 @@ export const ConsultantsGrid = () => {
   }, [])
 
   return (
-    <Grid
-      columns={columns}
-      data={consultants}
-    />
+    loading ? (
+      <Loading/>
+    ) : (
+      <Grid
+        columns={columns}
+        data={consultants}
+      />
+    )
   );
 };

@@ -11,6 +11,7 @@
   position: relative;
   flex: 0 0 auto;
   overflow: auto;
+  display: grid;
 }
 
 .splitter-layout .layout-pane.layout-pane-primary {
