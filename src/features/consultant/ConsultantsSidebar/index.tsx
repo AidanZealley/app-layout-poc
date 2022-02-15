@@ -1,6 +1,6 @@
-import { useLayoutValuesContext } from "../../../components/Layout/LayoutProvider"
-import { Sidebar } from "../../../components/Sidebar"
-import { ConsultantsFilters } from "../ConsultantsFilters"
+import { useLayoutValuesContext } from '../../../components/Layout/LayoutProvider'
+import { Sidebar } from '../../../components/Sidebar'
+import { ConsultantsFilters } from '../ConsultantsFilters'
 
 export const ConsultantsSidebar = () => {
   const { showLeft } = useLayoutValuesContext()
