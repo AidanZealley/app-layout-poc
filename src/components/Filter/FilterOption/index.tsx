@@ -10,7 +10,7 @@ export const FilterOption = ({ name }: IProps) => {
   return (
     <div className={styles.option}>
       <label className={styles.label} label-for={name}>{name}</label>
-      <Button size="sm"><X size="0.8rem"/></Button>
+      <Button size="sm" color="danger"><X size="0.8rem"/></Button>
     </div>
   )
 }

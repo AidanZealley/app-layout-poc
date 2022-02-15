@@ -25,6 +25,10 @@
   border-color: transparent;
 }
 
+.color-danger:not([disabled]):hover {
+  color: red;
+}
+
 .button[disabled] {
   opacity: 0.75;
 }

@@ -39,7 +39,7 @@ export const useLayoutActionsContext = () => {
 
 export const LayoutProvider = ({ children }: IProps) => {
   const [showLeft, setShowLeft] = useState<boolean>(true)
-  const [showRight, setShowRight] = useState<boolean>(true)
+  const [showRight, setShowRight] = useState<boolean>(false)
 
   const toggleLeft = useCallback(() => {
     setShowLeft(!showLeft)
