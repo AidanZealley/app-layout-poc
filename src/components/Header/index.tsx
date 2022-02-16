@@ -1,4 +1,4 @@
-import { Menu } from 'react-feather'
+import { List } from 'react-feather'
 import { Badge } from '../Badge'
 import { Button } from '../Button'
 import styles from './styles.module.css'
@@ -11,16 +11,27 @@ interface IProps {
   children?: React.ReactNode
 }
 
-export const Header = ({ title, activeFilters, reverse, menuHandler, children }: IProps) => {
+export const Header = ({
+  title,
+  activeFilters,
+  reverse,
+  menuHandler,
+  children
+}: IProps) => {
   return (
-    <div className={`${styles.header}${reverse ? ` ${styles.reverse}` : ''}`}>
+    <div
+      className={`
+        ${styles.header} 
+        ${reverse && ` ${styles.reverse}`}
+      `}
+    >
       <span className={styles.menuBtn}>
         {activeFilters &&
           <div className={styles.badgeWrap}>
             <Badge>{activeFilters}</Badge>
           </div>
         }
-        <Button onClick={menuHandler}><Menu size="1rem"/></Button>
+        <Button onClick={menuHandler}><List size="1rem"/></Button>
       </span>
 
       <h2 className={styles.title}>{title}</h2>

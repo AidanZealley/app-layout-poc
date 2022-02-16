@@ -1,9 +1,10 @@
+import { memo } from 'react'
 import { Clock, User } from 'react-feather'
 import { Header } from '../../../components/Header'
 import { useLayoutActionsContext } from '../../../components/Layout/LayoutProvider'
 import styles from './styles.module.css'
 
-export const ConsultantsHeader = () => {
+export const ConsultantsHeader = memo(() => {
   const { toggleLeft } = useLayoutActionsContext()
 
   return (
@@ -21,4 +22,4 @@ export const ConsultantsHeader = () => {
       </div>
     </Header>
   )
-}
+})

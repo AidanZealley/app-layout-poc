@@ -1,13 +1,12 @@
-import SplitterLayout from 'react-splitter-layout'
-import { ConsultantsHeader } from '../../features/consultant/ConsultantsHeader'
-import { ProjectsHeader } from '../../features/project/ProjectsHeader'
-import { ProjectsGrid } from '../../features/project/ProjectsGrid'
-import { Pane } from '../Pane'
-import { ConsultantsGrid } from '../../features/consultant/ConsultantsGrid'
 import { ConsultantsSidebar } from '../../features/consultant/ConsultantsSidebar'
 import { ProjectsSidebar } from '../../features/project/ProjectsSidebar'
+import { Splitter } from '../Splitter'
+import { Pane } from '../Pane';
+import { ConsultantsHeader } from '../../features/consultant/ConsultantsHeader';
+import { ConsultantsGrid } from '../../features/consultant/ConsultantsGrid';
+import { ProjectsHeader } from '../../features/project/ProjectsHeader';
+import { ProjectsGrid } from '../../features/project/ProjectsGrid';
 import styles from './styles.module.css'
-import '../../styles/splitter.css';
 
 export const Layout = () => {
   return (
@@ -15,7 +14,7 @@ export const Layout = () => {
       <ConsultantsSidebar/>
 
       <div className={styles.content}>
-        <SplitterLayout percentage primaryMinSize={10} secondaryMinSize={10}>
+        <Splitter>
           <Pane>
             <ConsultantsHeader/>
             <ConsultantsGrid/>
@@ -24,7 +23,7 @@ export const Layout = () => {
             <ProjectsHeader/>
             <ProjectsGrid/>
           </Pane>
-        </SplitterLayout>
+        </Splitter>
       </div>
 
       <ProjectsSidebar/>
